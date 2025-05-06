@@ -1,8 +1,13 @@
+/*  გლობალ რესეტს არ ქონდა ბოქს საიზინგი ბორდერ ბოქსი და ფონტს მიფუჭებდა და ამიტომ არ დავამატე  */
+
+/* Code */
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Lexend Deca", sans-serif;
+  list-style-type: none;
 }
 
 :root {
@@ -11,7 +16,6 @@
   --main-font-size: 14px;
   --heading-color: #5468e7;
 }
-
 
 body {
   max-width: 100vw;
@@ -23,15 +27,15 @@ body {
   color: var(--primary-color);
 }
 
-
 /* es imistvis rom footeri iyos yoveltvis gverdis boloshi */
 
 .page-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 }
-
 
 /* es carieli main elementi imistivis rom flex: 1; rom davuwer footeris zemot adgils daikavebs da footeri chamova qvemot */
 
@@ -60,6 +64,7 @@ footer {
 /* left side of the footer, image with description and copyright text */
 
 .logo {
+  min-width: 170px;
   display: flex;
   flex-direction: column;
   margin-top: 73px;
@@ -154,4 +159,33 @@ footer {
   top: 50%;
   right: 16px;
   transform: translateY(-50%);
+}
+
+/* media query */
+
+@media (max-width: 1439px) {
+  .list-container {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .wrapper-div {
+    padding-right: 0;
+    justify-content: space-around;
+  }
+
+  .footer-list li {
+    font-size: 12px;
+  }
+
+  .footer-list h3 {
+    font-size: 18px;
+  }
+
+  .footer-input {
+    width: 200px;
+  }
 }
